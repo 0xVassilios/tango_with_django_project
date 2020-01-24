@@ -25,6 +25,8 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'rango:login'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -39,6 +41,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
+PASSWORD_HASHERS = (
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
